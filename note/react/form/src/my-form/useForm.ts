@@ -4,8 +4,7 @@ import type {
   FocusEventHandler,
   FormEventHandler,
 } from "react";
-
-type FormValues = Record<string, any>;
+import type { FormValues, useFormArgs } from "./types";
 
 /**
  * @todo
@@ -21,17 +20,15 @@ type FormValues = Record<string, any>;
 
 // type TouchedFields<T extends FormValues> = Record<keyof T, boolean>;
 
-interface useFormArgs<T extends FormValues> {
-  initialValues: T;
-  validate: (values: T) => Partial<T>;
-  onSubmit: (values: T) => void;
-}
-
 export const useForm = <T extends FormValues>({
   initialValues,
   validate,
   onSubmit,
 }: useFormArgs<T>) => {
+  /**
+   * @todo
+   * controlled => uncontrolled
+   */
   const [values, setValues] = useState<T>(initialValues);
   const [errors, setErrors] = useState<Partial<T>>({});
   const [touched, setTouched] = useState<Partial<T>>({} as unknown as T);
@@ -83,6 +80,19 @@ export const useForm = <T extends FormValues>({
     setErrors(errors);
   }, [runValidator]);
 
+  const getFeildProps = (name: string) => {
+    const value = values[name];
+    const onBlur = handleBlur;
+    const onChange = handleChange;
+
+    return {
+      name,
+      value,
+      onBlur,
+      onChange,
+    };
+  };
+
   return {
     values,
     errors,
@@ -90,5 +100,6 @@ export const useForm = <T extends FormValues>({
     handleChange,
     handleBlur,
     handleSubmit,
+    getFeildProps,
   };
 };
