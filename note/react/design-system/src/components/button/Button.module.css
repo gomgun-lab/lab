@@ -1,0 +1,7 @@
+.button {
+  color: yellow;
+}
+
+.button--primary {
+  --jjan-button-text-waring-border: var(--ds-text-accent-warning-bolder);
+}

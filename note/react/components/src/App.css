@@ -40,3 +40,37 @@
 .read-the-docs {
   color: #888;
 }
+
+.circle {
+  width: 16px;
+  height: 16px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  position: relative;
+}
+
+/* .circle .v2 {
+  background: rgba(0, 0, 0, 0.6);
+  background-color: yellow;
+} */
+
+.circle::before,
+.circle::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.circle::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}

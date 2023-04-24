@@ -1,7 +1,8 @@
 import React from "react";
+import ImageForm from "./ImageForm";
 
 const ReactHookForm = () => {
-  return <div>Entry</div>;
+  return <ImageForm />;
 };
 
 export default ReactHookForm;

@@ -1,0 +1,8 @@
+Each keyword must be on a line by itself and each keyword line must start with an at-sign
+(i.e. '@') in the rst character position on the line. Furthermore, all keyword lines MUST be
+the rst lines on the le (i.e. the end of the keyword list is the rst line without an at sign in
+column one).
+The keyword specied on a keyword line is considered to start with the rst non-blank
+character after the at-sign and end with the last non-blank character on the line. Hence, a
+line of \ dog " contains the keyword \dog" and a line of \ dog & cat " contains the ONE
+keyword \dog & cat". Obviously, keywords may contain blanks.
