@@ -1,0 +1,9 @@
+.html[data-color-mode="light"][data-theme~="light:light"],
+html[data-color-mode="dark"][data-theme~="dark:light"] {
+  --ds-text-accent-: #ae2a19;
+  --ds-text-accent-warning-bolder: var(--jjan-gary-200);
+}
+
+.button {
+  --jjan-button-text-waring-border: var(--ds-text-accent-warning-bolder);
+}

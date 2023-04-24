@@ -1,0 +1,4 @@
+[data-theme~="light:light"],
+[data-theme~="dark:light"] {
+  --ds-text-accent-warning-bolder: var(--jjan-gary-500);
+}
